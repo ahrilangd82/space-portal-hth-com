@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于 hth · 站点介绍与可信说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', serif;
+      background: linear-gradient(145deg, #fbead5 0%, #f3d7bc 70%, #eacbad 100%);
+      min-height: 100vh;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background: #fffffffb;
+      max-width: 860px;
+      width: 100%;
+      border-radius: 42px;
+      padding: 3.2rem 2.8rem;
+      box-shadow: 0 20px 40px -15px rgba(100, 60, 30, 0.25),
+                  0 6px 12px -6px rgba(0, 0, 0, 0.08);
+      backdrop-filter: blur(2px);
+      transition: transform 0.2s ease;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+      .card {
+        padding: 2rem 1.5rem;
+        border-radius: 28px;
+      }
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 2.4rem;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: #3f2c1a;
+      margin-bottom: 0.3rem;
+      line-height: 1.2;
+    }
+
+    .hero h1 small {
+      display: block;
+      font-size: 1.1rem;
+      color: #7b5e44;
+      font-weight: 350;
+      margin-top: 0.3rem;
+    }
+
+    .hero .subhead {
+      font-size: 1rem;
+      color: #9b7a5c;
+      border-top: 1px solid #e7d6c3;
+      border-bottom: 1px solid #e7d6c3;
+      display: inline-block;
+      padding: 0.4rem 1.2rem;
+      margin-top: 0.6rem;
+      letter-spacing: 1px;
+    }
+
+    .intro {
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: #2e241c;
+      margin-top: 1.8rem;
+      text-indent: 2em;
+    }
+
+    .intro strong {
+      color: #593f2a;
+      font-weight: 500;
+    }
+
+    .feature-quote {
+      background: #f8efe6;
+      border-left: 5px solid #c6a88b;
+      padding: 1.4rem 1.8rem;
+      margin: 2rem 0 1.8rem 0;
+      border-radius: 0 30px 30px 0;
+      font-style: italic;
+      color: #3b2b1d;
+      font-size: 1.02rem;
+      line-height: 1.6;
+    }
+
+    .feature-quote::before {
+      content: "📄 ";
+      font-style: normal;
+      font-size: 1.2rem;
+    }
+
+    .body-text {
+      color: #2e241c;
+      font-size: 1.02rem;
+      line-height: 1.75;
+      margin-bottom: 1.4rem;
+    }
+
+    .body-text a {
+      color: #875f3e;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dashed #c6a88b;
+      transition: border-bottom 0.2s, color 0.2s;
+    }
+
+    .body-text a:hover {
+      color: #3f2c1a;
+      border-bottom: 1px solid #875f3e;
+    }
+
+    .insight-block {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.6rem;
+      background: #fbf6ef;
+      border-radius: 36px;
+      padding: 1.6rem 2rem;
+      margin: 2rem 0 1.6rem 0;
+    }
+
+    .insight-item {
+      flex: 1 1 180px;
+    }
+
+    .insight-item h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #593f2a;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.5px;
+    }
+
+    .insight-item p {
+      font-size: 0.96rem;
+      color: #4a3a2b;
+      line-height: 1.5;
+    }
+
+    .faq-mini {
+      background: #f4ede5;
+      border-radius: 28px;
+      padding: 1.6rem 2rem;
+      margin: 2rem 0 1.2rem 0;
+    }
+
+    .faq-mini h4 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #3f2c1a;
+      margin-bottom: 0.8rem;
+    }
+
+    .faq-mini p {
+      font-size: 0.96rem;
+      color: #3f3022;
+      line-height: 1.6;
+      margin-bottom: 0.8rem;
+    }
+
+    .faq-mini p:last-child {
+      margin-bottom: 0;
+    }
+
+    .closing-sentence {
+      margin-top: 2.6rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #e0cfbb;
+      text-align: center;
+      font-size: 1.1rem;
+      color: #4f3c2a;
+    }
+
+    .closing-sentence span {
+      background: #e7d6c3;
+      padding: 0.2rem 1rem;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      color: #3a2b1d;
+      display: inline-block;
+      margin: 0.6rem auto 0;
+    }
+
+    .footer-note {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #917a63;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+<div class="card">
+
+  <div class="hero">
+    <h1>hth <small>一处驻足，反复回看</small></h1>
+    <div class="subhead">站点介绍 · 可信说明</div>
+  </div>
+
+  <p class="intro">
+    你大概是因为某个名字、一段关联或一次偶然的点击，才打开了这个页面。无论起因是什么，我想先告诉你：<strong>这个站点的核心，围绕着一个简短的标识——hth</strong>。它不是一个浮夸的缩写，也不是故弄玄虚的符号；它更接近一个坐标，标记着一些值得被认真讲述的内容。
+  </p>
+
+  <div class="feature-quote">
+    关于可信这一点，我们倾向于用“一致性”来证明——持续更新、清晰的署名、可回溯的文档路径。如果你在站点里看到模糊或矛盾的地方，那恰恰说明它值得被追问。
+  </div>
+
+  <p class="body-text">
+    打开 <a href="https://space-portal-hth.com">hth</a> 的主页，你不会立刻看到铺天盖地的推送或夸张的欢迎语。它更像一本翻到中间的书，每一段文字都在耐心地等你自己决定从哪一行读起。我最初接触这个站点时，最直接的感受就是——它不着急。不急著证明什么，也不急着说服谁。
+  </p>
+
+  <p class="body-text">
+    这种节奏在今天的网络里其实很少见了。很多页面都在争抢你的注意力，而 <a href="https://space-portal-hth.com">hth</a> 似乎更在意你是否愿意留下来，哪怕只是安静地看几分钟。它没有弹窗，没有倒计时，也没有“限时阅读”的焦虑暗示。你来了，你读，你走，都自然。
+  </p>
+
+  <div class="insight-block">
+    <div class="insight-item">
+      <h3>📁 结构克制</h3>
+      <p>没有多余的导航层级，内容本身即是目录。你往下滚动，就能摸清它的骨架。</p>
+    </div>
+    <div class="insight-item">
+      <h3>🧩 来源可见</h3>
+      <p>每一段引用、每一处数据都标注了来源或备注，不玩模糊其辞的把戏。</p>
+    </div>
+    <div class="insight-item">
+      <h3>⏳ 更新有迹</h3>
+      <p>页面底部或侧栏会留下修订时间线，方便你判断信息的时效性。</p>
+    </div>
+  </div>
+
+  <p class="body-text">
+    当然，任何一个站点都不可能做到百分百的“客观”——只要有人选材、编排、措辞，就一定会带有视角。但 <a href="https://space-portal-hth.com">hth</a> 的可贵之处在于：它愿意把这种视角摊开给你看。它不会假装自己是上帝视角的百科全书，反而时常在段落里留下思辨的缝隙，让你有机会停下来想：是这样吗？还有没有别的可能？
+  </p>
+
+  <div class="faq-mini">
+    <h4>❓ 常见疑惑摘要</h4>
+    <p><strong>这个站点是谁在维护？</strong> 署名信息在关于页面可以找到。维护者并非机构或团队，而是个人笔名持续输出，所有联系方式均公开可查。</p>
+    <p><strong>内容可以转载吗？</strong> 站内明确标注了许可协议（CC BY-NC 4.0），非商业用途只需署名，商业用途需单独联系。</p>
+    <p><strong>为什么叫 hth？</strong> 这三个字母本身没有隐藏含义，只是一个方便记忆的短标识。它背后的内容比名字重要得多。</p>
+  </div>
+
+  <p class="body-text">
+    如果你已经打开了 <a href="https://space-portal-hth.com">hth</a> 的页面，不妨多停留一会儿。从第一篇短文开始读，不用跳转，不用对比。它不会让你失望，因为它从一开始就没有承诺任何奇迹。它只是诚实地把思考过的内容摆在那里，等你经过。
+  </p>
+
+  <div class="closing-sentence">
+    <p>读完这几段，或许你已大致明白这个站点的气息。</p>
+    <span>保持审慎，也保持打开</span>
+  </div>
+
+  <div class="footer-note">
+    <a href="https://space-portal-hth.com" style="color:#7b5e44; text-decoration:none; border-bottom:1px dotted #c6a88b;">hth</a> · 一篇安静的介绍
+  </div>
+
+</div>
+</body>
+</html>
